@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3 style="color:green">Total Click: 0</h3>
+    <button id="btn">Click Me</button>
+</body>
+<script>
+    let counter = 0
+    const h3 = document.querySelector("h3")
+    const button = document.getElementById("btn")
+    function handleClick(){
+        counter += 1
+        console.log("Click", counter)
+        h3.innerText = `Total Click: ` + counter
+    }
+    function handleMouseOver(){
+        console.log("MouseOver")
+    }
+    
+    button.addEventListener("click", handleClick)
+    h3.addEventListener("mouseover", handleMouseOver)
+</script>
+</html>
