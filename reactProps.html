@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    
+    const root = document.getElementById("root")
+    function Btn ({ title, fontSize = 16}) {
+        return (
+            <button 
+            style={{
+                backgroundColor: "green",
+                border: "1px solid",
+                padding: "10px 20px",
+                color: "white",
+                borderRadius: 10,
+                fontSize,
+            }}
+            >{title}</button>
+        )
+    }
+    Btn.propTypes = {
+        title: PropTypes.string.isRequired,
+        fontSize: PropTypes.number.isRequired
+    }
+    function App() {
+        const [title, setTitle] = React.useState("Save Button")
+        return (
+            <div>
+                <Btn title="SaveButton" fontSize={32}/>
+                <Btn title="SubmitButton" fontSize={100}/>
+            </div>
+        )
+    }
+    ReactDOM.render(<App />, root)
+</script>
+</html>
